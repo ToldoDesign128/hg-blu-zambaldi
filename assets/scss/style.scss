@@ -15,3 +15,10 @@ Text Domain: hg-blu-zambaldi
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+
+// Utilities
+@use '/assets/scss/utilities/reset' as reset;
+@use '/assets/scss/utilities/layout' as layout;
+
+// Block
+@use '/assets/scss/block/block' as block;

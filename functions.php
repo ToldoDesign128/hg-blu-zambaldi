@@ -101,5 +101,7 @@ if( function_exists('acf_add_options_page') ) {
 
 //CPT
 require dirname(__FILE__) . '/functions-parts/cpt-corsi.php';
-require dirname(__FILE__) . '/functions-parts/cpt-defibrillatori.php';
 require dirname(__FILE__) . '/functions-parts/cpt-testimonianze.php';
+
+// Extended Functions
+require dirname(__FILE__) . '/functions-parts/header-walker.php';

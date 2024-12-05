@@ -1,6 +1,6 @@
 <?php
 get_header(); ?>
-<main class="single">
+<main class="post-corsi">
     
 </main>
 <?php get_footer(); ?>

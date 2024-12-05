@@ -1,0 +1,72 @@
+// Header
+
+@use '/assets/scss/variable/variable' as v;
+
+header{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    .header-wrap{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .menu-desk{
+            display: none;
+
+            @include v.respond-to(lg) {
+                display: flex;
+
+                ul{
+                    display: flex;
+
+                    li{
+                        .sub-menu{
+                            display: none;
+                        }
+                        .sub-menu-active{
+                            display: flex;
+                        }
+                    }
+                }
+            }
+        }
+
+        .hamburger{
+            display: flex;
+
+            @include v.respond-to(lg) {
+                display: none;
+            }
+        }
+    }
+
+    .panel-mobile{
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        .menu-mobile{
+            ul{
+                display: flex;
+
+                li{
+                    .sub-menu{
+                        display: none;
+                    }
+                    .sub-menu-active{
+                        display: flex;
+                    }
+                }
+            }
+        }
+
+        @include v.respond-to(lg) {
+            display: none;
+        }
+    }
+}
+

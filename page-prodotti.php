@@ -1,6 +1,7 @@
 <?php
+/* Template Name: Prodotti */
 get_header(); ?>
-<main class="single">
+<main class="prodotti">
     
 </main>
 <?php get_footer(); ?>

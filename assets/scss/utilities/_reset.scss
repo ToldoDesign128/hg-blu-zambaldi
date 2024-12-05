@@ -1,0 +1,44 @@
+@use '/assets/scss/variable/variable' as v;
+
+/* Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Rimuove margini */
+body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+/* Imposta altezza e larghezza al 100% per il body */
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+/* Rimuove padding per liste */
+ul[role='list'], ol[role='list'] {
+  list-style: none;
+  padding: 0;
+}
+
+/* Azzera margini per immagini */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Imposta una linea di base coerente */
+body {
+  line-height: 1.5;
+  font-family: v.$primary-font;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+}
+
+/* Link senza decorazioni */
+a {
+  text-decoration: none;
+  color: inherit;
+}
