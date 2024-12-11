@@ -90,9 +90,7 @@ get_header(); ?>
         </div>
     </section>
     <!-- Form -->
-    <section class="form">
-
-    </section>
+    <?php get_template_part('/template-parts/form') ?>
     <!-- FAQ -->
     <?php get_template_part('/template-parts/faq') ?>
 </main>
