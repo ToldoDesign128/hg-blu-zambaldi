@@ -1,96 +1,108 @@
 <?php
 /* Template Name: Home */
 get_header(); ?>
-<main class="home">
+<main class="home-page">
     <!-- Hero -->
-    <section class="hero-home">
-        <?php
-        $title = get_field('titolo');
-        $text = get_field('testo');
-
-        if ($title) : ?>
-            <h1 class="title">
-                <?php echo esc_html($title); ?>
-                <span><?php echo esc_html($title); ?></span>
-            </h1>
-        <?php endif;
-        if ($text) : ?>
-            <div class="text">
-                <?php echo $text; ?>
-            </div>
-        <?php endif; ?>
-        <div class="hero-btn">
-
+    <section class="hero-home container">
+        <div class="hero-box">
             <?php
-            $btn_1 = get_field('pulsante_1');
-            if ($btn_1):
-                $btn_1_url = $btn_1['url'];
-                $btn_1_title = $btn_1['title'];
-                $btn_1_target = $btn_1['target'] ? $btn_1['target'] : '_self';
-            ?>
-
-                <a class="btn-red" href="<?php echo esc_url($btn_1_url); ?>" target="<?php echo esc_attr($btn_1_target); ?>"><?php echo esc_html($btn_1_title); ?></a>
-
+            $title = get_field('titolo');
+            $text = get_field('testo');
+    
+            if ($title) : ?>
+                <h1 class="title title-h1">
+                    <?php echo esc_html($title); ?>
+                    <span class="title-bg"><?php echo esc_html($title); ?></span>
+                </h1>
             <?php endif;
-
-            $btn_2 = get_field('pulsante_2');
-            if ($btn_2):
-                $btn_2_url = $btn_2['url'];
-                $btn_2_title = $btn_2['title'];
-                $btn_2_target = $btn_2['target'] ? $btn_2['target'] : '_self';
-            ?>
-
-                <a class="btn" href="<?php echo esc_url($btn_2_url); ?>" target="<?php echo esc_attr($btn_2_target); ?>"><?php echo esc_html($btn_2_title); ?></a>
-
+            if ($text) : ?>
+                <div class="text text-body">
+                    <?php echo $text; ?>
+                </div>
             <?php endif; ?>
-
+            <div class="hero-btn">
+    
+                <?php
+                $btn_1 = get_field('pulsante_1');
+                if ($btn_1):
+                    $btn_1_url = $btn_1['url'];
+                    $btn_1_title = $btn_1['title'];
+                    $btn_1_target = $btn_1['target'] ? $btn_1['target'] : '_self';
+                ?>
+    
+                    <a class="btn-red text-small semibold" href="<?php echo esc_url($btn_1_url); ?>" target="<?php echo esc_attr($btn_1_target); ?>"><?php echo esc_html($btn_1_title); ?></a>
+    
+                <?php endif;
+    
+                $btn_2 = get_field('pulsante_2');
+                if ($btn_2):
+                    $btn_2_url = $btn_2['url'];
+                    $btn_2_title = $btn_2['title'];
+                    $btn_2_target = $btn_2['target'] ? $btn_2['target'] : '_self';
+                ?>
+    
+                    <a class="btn text-small semibold" href="<?php echo esc_url($btn_2_url); ?>" target="<?php echo esc_attr($btn_2_target); ?>"><?php echo esc_html($btn_2_title); ?></a>
+    
+                <?php endif; ?>
+    
+            </div>
         </div>
+
         <div class="block-gallery">
-            <!-- Galleria 1 -->
-            <div class="swiper-container gallery-1">
-                <div class="swiper-wrapper">
-                    <?php
-                    $images = get_field('gallery_1');
-                    $size = 'full';
-                    if ($images):
-                        foreach ($images as $image_id): ?>
-                            <div class="swiper-slide">
-                                <?php echo wp_get_attachment_image($image_id, $size); ?>
-                            </div>
-                    <?php endforeach;
-                    endif; ?>
+
+            <div class="gallery-box">
+                <div class="gallery-wrap">
+                    <!-- Galleria 1 -->
+                    <div class="swiper-container gallery-1">
+                        <div class="swiper-wrapper">
+                            <?php
+                            $images = get_field('gallery_1');
+                            $size = 'full';
+                            if ($images):
+                                foreach ($images as $image_id): ?>
+                                    <div class="swiper-slide">
+                                        <?php echo wp_get_attachment_image($image_id, $size); ?>
+                                    </div>
+                            <?php endforeach;
+                            endif; ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-wrap">
+
+                    <!-- Galleria 2 -->
+                    <div class="swiper-container gallery-2">
+                        <div class="swiper-wrapper">
+                            <?php
+                            $images = get_field('gallery_2');
+                            $size = 'full';
+                            if ($images):
+                                foreach ($images as $image_id): ?>
+                                    <div class="swiper-slide">
+                                        <?php echo wp_get_attachment_image($image_id, $size); ?>
+                                    </div>
+                            <?php endforeach;
+                            endif; ?>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="gallery-wrap">
 
-            <!-- Galleria 2 -->
-            <div class="swiper-container gallery-2">
-                <div class="swiper-wrapper">
-                    <?php
-                    $images = get_field('gallery_2');
-                    $size = 'full';
-                    if ($images):
-                        foreach ($images as $image_id): ?>
-                            <div class="swiper-slide">
-                                <?php echo wp_get_attachment_image($image_id, $size); ?>
-                            </div>
-                    <?php endforeach;
-                    endif; ?>
-                </div>
-            </div>
-
-            <!-- Galleria 3 -->
-            <div class="swiper-container gallery-3">
-                <div class="swiper-wrapper">
-                    <?php
-                    $images = get_field('gallery_3');
-                    $size = 'full';
-                    if ($images):
-                        foreach ($images as $image_id): ?>
-                            <div class="swiper-slide">
-                                <?php echo wp_get_attachment_image($image_id, $size); ?>
-                            </div>
-                    <?php endforeach;
-                    endif; ?>
+                <!-- Galleria 3 -->
+                <div class="swiper-container gallery-3">
+                    <div class="swiper-wrapper">
+                        <?php
+                        $images = get_field('gallery_3');
+                        $size = 'full';
+                        if ($images):
+                            foreach ($images as $image_id): ?>
+                                <div class="swiper-slide">
+                                    <?php echo wp_get_attachment_image($image_id, $size); ?>
+                                </div>
+                        <?php endforeach;
+                        endif; ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -313,7 +325,7 @@ get_header(); ?>
                     <?php if ($prodotti_immagine): ?>
                         <img src="<?php echo esc_url($prodotti_immagine['url']); ?>" alt="<?php echo esc_attr($prodotti_immagine['alt']); ?>">
                     <?php endif; ?>
-                    <a href="<?php echo get_permalink($prodotti_page->ID);?>"><span>+</span></a>
+                    <a href="<?php echo get_permalink($prodotti_page->ID); ?>"><span>+</span></a>
                 </div>
 
                 <div class="card-assisstenza">
@@ -322,7 +334,7 @@ get_header(); ?>
                     <?php if ($assistenza_immagine): ?>
                         <img src="<?php echo esc_url($assistenza_immagine['url']); ?>" alt="<?php echo esc_attr($assistenza_immagine['alt']); ?>">
                     <?php endif; ?>
-                    <a href="<?php echo get_permalink($assistenza_page->ID);?>"><span>+</span></a>
+                    <a href="<?php echo get_permalink($assistenza_page->ID); ?>"><span>+</span></a>
                 </div>
             </section>
         <?php

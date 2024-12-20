@@ -9,7 +9,7 @@ function corsi()
             'labels'                => array(
                 'name'              => 'Corsi',
                 'singular_name'     => 'Corso',
-                'all_items'         => 'Tutte le Corsi',
+                'all_items'         => 'Tutte i Corsi',
                 'add_new'           => 'Aggiungi un nuovo Corso',
                 'add_new_item'      => 'Aggiungi un nuovo Corso',
                 'edit_item'         => 'Modifica Corso',

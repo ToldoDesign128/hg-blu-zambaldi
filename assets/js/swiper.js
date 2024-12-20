@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', function () {
     var swiper1 = new Swiper('.gallery-1', {
         loop: true,
         autoplay: {
-            delay: 3000, // Tempo tra una slide e l'altra in millisecondi
+            delay: 2000, // Tempo tra una slide e l'altra in millisecondi
         },
-        effect: 'slide', // Altri effetti: 'fade', 'cube', 'coverflow'
+        effect: 'fade', // Altri effetti: 'fade', 'cube', 'coverflow'
     });
 
     var swiper2 = new Swiper('.gallery-2', {
@@ -12,14 +12,14 @@ document.addEventListener('DOMContentLoaded', function () {
         autoplay: {
             delay: 3000,
         },
-        effect: 'slide',
+        effect: 'fade',
     });
 
     var swiper3 = new Swiper('.gallery-3', {
         loop: true,
         autoplay: {
-            delay: 3000,
+            delay: 4000,
         },
-        effect: 'slide',
+        effect: 'fade',
     });
 });

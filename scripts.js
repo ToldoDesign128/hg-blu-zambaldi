@@ -1,1 +1,1 @@
-
+jQuery(".menu-item-has-children").click((function(){jQuery(".sub-menu").toggleClass("sub-menu-active")})),jQuery("#hamburgerBtn").click((function(){jQuery("#hamburgerBtn").toggleClass("hamburger-active"),jQuery("#menuMobile").toggleClass("panel-active"),jQuery("body").toggleClass("stop-scroll")}));

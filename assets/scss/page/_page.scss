@@ -1,3 +1,28 @@
 // Export Pages
+@use "/assets/scss/variable/variable" as v;
+@use "/assets/scss/page/front-page" as front-page;
 
-@use '/assets/scss/page/front-page' as front-page;
+// General Style of Page
+
+body {
+  .error,
+  .home-page,
+  .blog,
+  .index,
+  .assistenza,
+  .about,
+  .contatatti,
+  .defibrillatori,
+  .formazione,
+  .prodotti,
+  .testimonianze,
+  .page,
+  .post-corsi,
+  .single {
+    padding: 150px 0 130px 0;
+
+    @include v.respond-to(lg) {
+      padding: 190px 0 210px 0;
+    }
+  }
+}

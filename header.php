@@ -27,15 +27,15 @@
 
 <body <?php body_class(); ?>>
     <header>
-        <div class="header-wrap">
+        <div class="header-wrap container">
             <a href="<?php echo home_url(); ?>" class="header-logo">
-                Logo
+                <img src="<?php echo get_template_directory_uri() . '/assets/img/Logo.svg'; ?>" alt="">
             </a>
             <nav class="menu-desk">
                 <?php
                 wp_nav_menu(array(
                     'theme_location'    => 'primary',
-                    'walker'           => new Custom_Walker_Nav_Menu(),
+                    'walker'            =>  new Custom_Walker_Nav_Menu(),
                     'container'         =>  false,
                     'menu_class'        => 'main-menu',
                     'orderby'           => 'menu_order',
@@ -43,14 +43,14 @@
                 ));
                 ?>
             </nav>
-            <button class="hamburger">
+            <button id="hamburgerBtn" class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
         </div>
 
-        <div class="panel-mobile">
+        <div id="menuMobile" class="panel-mobile">
             <nav class="menu-mobile">
                 <?php
                 wp_nav_menu(array(

@@ -1,0 +1,33 @@
+// Button
+
+@use "/assets/scss/variable/variable" as v;
+
+.btn,
+.btn-red {
+  padding: 10px 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border: 1px solid v.$gray-border;
+  border-radius: 50px;
+  color: v.$red-color;
+  background: linear-gradient(180deg, v.$white-color 0%, v.$d-white-color 100%);
+  transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+  @include v.respond-to(lg) {
+    padding: 15px 20px;
+
+    &:hover {
+      border-color: v.$red-color;
+      color: v.$red-color;
+      background: v.$white-color;
+    }
+  }
+}
+.btn-red {
+  color: v.$white-color;
+  background: linear-gradient(
+    180deg,
+    v.$l-red-gradient 0%,
+    v.$d-red-gradient 100%
+  );
+}
