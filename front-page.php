@@ -8,7 +8,7 @@ get_header(); ?>
             <?php
             $title = get_field('titolo');
             $text = get_field('testo');
-    
+
             if ($title) : ?>
                 <h1 class="title title-h1">
                     <?php echo esc_html($title); ?>
@@ -21,7 +21,7 @@ get_header(); ?>
                 </div>
             <?php endif; ?>
             <div class="hero-btn">
-    
+
                 <?php
                 $btn_1 = get_field('pulsante_1');
                 if ($btn_1):
@@ -29,22 +29,22 @@ get_header(); ?>
                     $btn_1_title = $btn_1['title'];
                     $btn_1_target = $btn_1['target'] ? $btn_1['target'] : '_self';
                 ?>
-    
+
                     <a class="btn-red text-small semibold" href="<?php echo esc_url($btn_1_url); ?>" target="<?php echo esc_attr($btn_1_target); ?>"><?php echo esc_html($btn_1_title); ?></a>
-    
+
                 <?php endif;
-    
+
                 $btn_2 = get_field('pulsante_2');
                 if ($btn_2):
                     $btn_2_url = $btn_2['url'];
                     $btn_2_title = $btn_2['title'];
                     $btn_2_target = $btn_2['target'] ? $btn_2['target'] : '_self';
                 ?>
-    
+
                     <a class="btn text-small semibold" href="<?php echo esc_url($btn_2_url); ?>" target="<?php echo esc_attr($btn_2_target); ?>"><?php echo esc_html($btn_2_title); ?></a>
-    
+
                 <?php endif; ?>
-    
+
             </div>
         </div>
 
@@ -109,25 +109,44 @@ get_header(); ?>
 
     </section>
     <!-- Chi siamo -->
-    <section class="about">
-        <div class="block-txt">
-            <img src="" alt="elettrocardiogramma" class="cta-bg">
-            <?php
-            $title_block = get_field('titolo_blocco');
-            $text_block = get_field('testo_blocco');
-
-            if ($title_block) : ?>
-                <h2 class="title-block">
-                    <?php echo esc_html($title_block); ?>
-                </h2>
-            <?php endif;
-            if ($text_block) : ?>
-                <div class="text-block">
-                    <?php echo $text_block; ?>
+    <section class="about-section">
+        <div class="block-txt container">
+            <div class="block-wrap">
+                <div class="img-mobile">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="390" height="249" viewBox="0 0 390 249" fill="none">
+                        <path d="M268.789 249L311.507 85.9335L332.021 161.07H488V139.475H348.417L310.331 0L268.789 170.61L230.556 53.8378L184.161 200.191H-642V221.785H199.896L230.924 123.871L268.789 249Z" fill="url(#paint0_linear_213_1054)" fill-opacity="0.08" />
+                        <defs>
+                            <linearGradient id="paint0_linear_213_1054" x1="-642" y1="126.114" x2="488" y2="122.924" gradientUnits="userSpaceOnUse">
+                                <stop offset="0.074345" stop-color="white" />
+                                <stop offset="0.727543" stop-color="#F8F8F8" />
+                                <stop offset="1" stop-color="#F5F5F5" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
                 </div>
-            <?php endif; ?>
+                <div class="img-desk">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1620" height="480" viewBox="0 0 1620 480" fill="none">
+                        <path d="M288.955 479.497L206.219 165.481L166.489 310.17H0V268.586H134.733L208.498 0L288.955 328.541L363.005 103.675L452.861 385.506H1619.33V427.089H422.386L362.293 238.538L288.955 479.497Z" fill="white" fill-opacity="0.08" />
+                    </svg>
+                </div>
+
+                <?php
+                $title_block = get_field('titolo_blocco');
+                $text_block = get_field('testo_blocco');
+
+                if ($title_block) : ?>
+                    <h2 class="title-block title-h3 regular uppercase">
+                        <?php echo esc_html($title_block); ?>
+                    </h2>
+                <?php endif;
+                if ($text_block) : ?>
+                    <div class="text-block text-body">
+                        <?php echo $text_block; ?>
+                    </div>
+                <?php endif; ?>
+            </div>
         </div>
-        <div class="block-cta">
+        <div class="block-cta container">
             <?php
             $title_about = get_field('titolo_about');
             $text_about = get_field('testo_about');
@@ -140,17 +159,17 @@ get_header(); ?>
             }
 
             if ($title_about) : ?>
-                <h2 class="title-about">
+                <h2 class="title-about title-h3 medium uppercase"> 
                     <?php echo esc_html($title_about); ?>
                 </h2>
             <?php endif;
             if ($text_about) : ?>
-                <div class="text-about">
+                <div class="text-about text-body">
                     <?php echo $text_block; ?>
                 </div>
             <?php endif;
             if ($btn) : ?>
-                <a class="btn" href="<?php echo esc_url($btn_url); ?>" target="<?php echo esc_attr($btn_target); ?>"><?php echo esc_html($btn_title); ?></a>
+                <a class="btn text-small semibold" href="<?php echo esc_url($btn_url); ?>" target="<?php echo esc_attr($btn_target); ?>"><?php echo esc_html($btn_title); ?></a>
             <?php endif; ?>
         </div>
     </section>

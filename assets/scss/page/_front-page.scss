@@ -9,13 +9,20 @@
     overflow-x: clip;
     position: relative;
     display: block;
+    min-height: 75vh;
 
     @include v.respond-to(md) {
       overflow-x: visible;
+      min-height: 65vh;
     }
 
     @include v.respond-to(xl) {
       padding: 0;
+      min-height: 80vh;
+    }
+
+    @include v.respond-to(big) {
+      min-height: 85vh;
     }
 
     .hero-box {
@@ -157,6 +164,109 @@
           @include v.respond-to(big) {
             max-width: 420px;
           }
+        }
+      }
+    }
+  }
+  .about-section {
+    margin-top: 42px;
+
+    @include v.respond-to(md) {
+      margin-top: 74px;
+    }
+    .block-txt {
+      padding: 12px;
+      border-radius: 42px;
+      border: 1px solid v.$gray-border;
+      background-image: linear-gradient(
+        180deg,
+        v.$white-color,
+        v.$d-white-color
+      );
+
+      .block-wrap {
+        padding: 53px 19px 113px 19px;
+        position: relative;
+        overflow: clip;
+        border-radius: 32px;
+        background-image: linear-gradient(
+          180deg,
+          v.$l-red-gradient,
+          v.$d-red-gradient
+        );
+        text-align: center;
+        color: v.$white-color;
+
+        @include v.respond-to(md) {
+          padding: 108px 198px 119px 198px;
+        }
+
+        @include v.respond-to(big) {
+          padding: 138px 398px 149px 398px;
+        }
+
+        .img-mobile{
+          svg {
+            display: block;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            height: 250px;
+  
+            @include v.respond-to(md) {
+              display: none;
+            }
+          }
+        }
+        .img-desk{
+          svg {
+            display: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            height: 250px;
+  
+            @include v.respond-to(md) {
+              display: block;
+              height: auto;
+              width: 100%;
+            }
+          }
+        }
+
+
+        .text-block {
+          margin-top: 24px;
+        }
+      }
+    }
+    .block-cta{
+      margin-top: 85px;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      @include v.respond-to(lg) {
+        margin-top: 132px;
+      }
+
+      .text-about{
+        margin-top: 12px;
+
+        @include v.respond-to(lg) {
+          margin-top: 16px;
+        }
+      }
+
+      .btn{
+        margin-top: 32px;
+        
+        @include v.respond-to(lg) {
+          margin-top: 36px;
         }
       }
     }
