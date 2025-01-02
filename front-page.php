@@ -159,7 +159,7 @@ get_header(); ?>
             }
 
             if ($title_about) : ?>
-                <h2 class="title-about title-h3 medium uppercase"> 
+                <h2 class="title-about title-h3 medium uppercase">
                     <?php echo esc_html($title_about); ?>
                 </h2>
             <?php endif;
@@ -174,18 +174,18 @@ get_header(); ?>
         </div>
     </section>
     <!-- Defibrillatori -->
-    <section class="defibrillatori">
+    <section class="defibrillatori-section container">
         <?php
         $title_defi = get_field('titolo_defibrillatori');
         $text_defi = get_field('testo_defibrillatori');
 
         if ($title_defi) : ?>
-            <h2 class="title-defi">
+            <h2 class="title-defi title-h3 medium uppercase">
                 <?php echo esc_html($title_defi); ?>
             </h2>
         <?php endif;
         if ($text_defi) : ?>
-            <div class="text-defi">
+            <div class="text-defi text-body">
                 <?php echo $text_defi; ?>
             </div>
         <?php endif; ?>
@@ -208,24 +208,20 @@ get_header(); ?>
             if ($child_pages->have_posts()) : ?>
                 <ul class="child-pages-list">
                     <?php while ($child_pages->have_posts()) : $child_pages->the_post(); ?>
-                        <li>
+                        <li class="card-item">
                             <div class="card-title">
-                                <?php
-                                $icon_defi = get_field('immagine_hero');
-                                if (!empty($icon_defi)): ?>
-                                    <img src="<?php echo esc_url($icon_defi['url']); ?>" alt="<?php echo esc_attr($icon_defi['alt']); ?>" />
-                                <?php endif; ?>
-                                <?php the_title(); ?>
+                                <?php the_post_thumbnail('thumbnail', array('class' => 'img-res', 'alt' => get_the_title())); ?>
+                                <?php the_title('<h5 class="title-h5 uppercase medium">', '</h5>'); ?>
                             </div>
                             <div class="card-content">
                                 <?php
                                 $text_card = get_field('testo_hero');
                                 if ($text_card) : ?>
-                                    <div>
+                                    <div class="text-body">
                                         <?php echo $text_card; ?>
                                     </div>
                                 <?php endif; ?>
-                                <a href="<?php the_permalink(); ?>">
+                                <a class="card-btn" href="<?php the_permalink(); ?>">
                                     <span>+</span>
                                 </a>
                             </div>
@@ -243,27 +239,30 @@ get_header(); ?>
         </div>
     </section>
     <!-- Corsi -->
-    <section class="corsi">
+    <section class="corsi-section container">
+        <div class="corsi-wrap">
+            <?php
+            $title_corsi = get_field('titolo_corsi');
+
+            if ($title_corsi) : ?>
+                <h2 class="title-corsi title-h3 medium uppercase">
+                    <?php echo esc_html($title_corsi); ?>
+                </h2>
+            <?php endif;
+
+            $btn_corsi = get_field('pulsante_corsi');
+            if ($btn_corsi):
+                $btn_corsi_url = $btn_corsi['url'];
+                $btn_corsi_title = $btn_corsi['title'];
+                $btn_corsi_target = $btn_corsi['target'] ? $btn_corsi['target'] : '_self';
+            ?>
+
+                <a class="btn text-small semibold" href="<?php echo esc_url($btn_corsi_url); ?>" target="<?php echo esc_attr($btn_corsi_target); ?>"><?php echo esc_html($btn_corsi_title); ?></a>
+
+            <?php endif; ?>
+        </div>
+
         <?php
-        $title_corsi = get_field('titolo_corsi');
-
-        if ($title_corsi) : ?>
-            <h2 class="title-corsi">
-                <?php echo esc_html($title_corsi); ?>
-            </h2>
-        <?php endif;
-
-        $btn_corsi = get_field('pulsante_corsi');
-        if ($btn_corsi):
-            $btn_corsi_url = $btn_corsi['url'];
-            $btn_corsi_title = $btn_corsi['title'];
-            $btn_corsi_target = $btn_corsi['target'] ? $btn_corsi['target'] : '_self';
-        ?>
-
-            <a class="btn" href="<?php echo esc_url($btn_corsi_url); ?>" target="<?php echo esc_attr($btn_corsi_target); ?>"><?php echo esc_html($btn_corsi_title); ?></a>
-
-        <?php endif;
-
         /* Loop Corsi */
 
         $corsi_loop = new WP_Query(array(
@@ -278,19 +277,24 @@ get_header(); ?>
                 <?php while ($corsi_loop->have_posts()) : $corsi_loop->the_post(); ?>
                     <div class="card">
                         <div class="card-box">
-                            <?php the_post_thumbnail('thumbnail', array('class' => '', 'alt' => get_the_title())); ?>
+                            <?php the_post_thumbnail('medium', array('class' => '', 'alt' => get_the_title())); ?>
                             <div class="card-info">
+                                <div>
+                                    <p class="label text-small">Corso</p>
+                                    <?php
+                                    $durata = get_field('durata');
+                                    if ($durata) : ?>
+                                        <p class="durata"><?php echo esc_html($durata); ?></p>
+                                    <?php endif; ?>
+                                </div>
 
-                                <p class="label">Corso</p>
-                                <?php
-                                $durata = get_field('durata');
-                                if ($durata) : ?>
-                                    <p class="durata"><?php echo esc_html($durata); ?></p>
-                                <?php endif; ?>
+                                <p class="card-title title-h5 medium"><?php the_title(); ?></p>
 
-                                <p class="card-title"><?php the_title(); ?></p>
-
-                                <a href="<?php echo the_permalink(); ?>" class="card-icon">+</a>
+                                <a href="<?php echo the_permalink(); ?>" class="card-icon">
+                                    <span>
+                                        +
+                                    </span>
+                                </a>
 
                                 <?php the_content(); ?>
                             </div>
@@ -300,21 +304,32 @@ get_header(); ?>
                     <?php wp_reset_postdata(); ?>
                 <?php endwhile; ?>
             </ul>
+        <?php endif;
+
+        $btn_corsi = get_field('pulsante_corsi');
+        if ($btn_corsi):
+            $btn_corsi_url = $btn_corsi['url'];
+            $btn_corsi_title = $btn_corsi['title'];
+            $btn_corsi_target = $btn_corsi['target'] ? $btn_corsi['target'] : '_self';
+        ?>
+        <div class="mobile-btn-wrap">
+            <a class="btn text-small semibold" href="<?php echo esc_url($btn_corsi_url); ?>" target="<?php echo esc_attr($btn_corsi_target); ?>"><?php echo esc_html($btn_corsi_title); ?></a>
+        </div>
         <?php endif; ?>
     </section>
     <!-- Prodotti e Assistenza -->
-    <section class="prodotti">
+    <section class="prodotti-section container">
         <?php
         $title_prodotti = get_field('titolo_prodotti');
         $text_prodotti = get_field('testo_prodotti');
 
         if ($title_prodotti) : ?>
-            <h2 class="title-prodotti">
+            <h2 class="title-prodotti title-h3 medium uppercase">
                 <?php echo esc_html($title_prodotti); ?>
             </h2>
         <?php endif;
         if ($text_prodotti) : ?>
-            <div class="text-prodotti">
+            <div class="text-prodotti text-body">
                 <?php echo $text_prodotti; ?>
             </div>
         <?php endif; ?>

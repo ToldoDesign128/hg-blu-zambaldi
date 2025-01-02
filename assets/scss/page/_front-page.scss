@@ -205,7 +205,7 @@
           padding: 138px 398px 149px 398px;
         }
 
-        .img-mobile{
+        .img-mobile {
           svg {
             display: block;
             position: absolute;
@@ -213,13 +213,13 @@
             transform: translateX(-50%);
             bottom: 0;
             height: 250px;
-  
+
             @include v.respond-to(md) {
               display: none;
             }
           }
         }
-        .img-desk{
+        .img-desk {
           svg {
             display: none;
             position: absolute;
@@ -227,7 +227,7 @@
             transform: translateX(-50%);
             top: 0;
             height: 250px;
-  
+
             @include v.respond-to(md) {
               display: block;
               height: auto;
@@ -236,13 +236,12 @@
           }
         }
 
-
         .text-block {
           margin-top: 24px;
         }
       }
     }
-    .block-cta{
+    .block-cta {
       margin-top: 85px;
       padding: 0 20px;
       display: flex;
@@ -254,7 +253,7 @@
         margin-top: 132px;
       }
 
-      .text-about{
+      .text-about {
         margin-top: 12px;
 
         @include v.respond-to(lg) {
@@ -262,13 +261,276 @@
         }
       }
 
-      .btn{
+      .btn {
         margin-top: 32px;
-        
+
         @include v.respond-to(lg) {
           margin-top: 36px;
         }
       }
+    }
+  }
+  .defibrillatori-section {
+    margin-top: 86px;
+    padding: 0 20px;
+
+    @include v.respond-to(md) {
+      margin-top: 132px;
+    }
+
+    @include v.respond-to(lg) {
+      padding: 0;
+    }
+    .title-defi{
+      @include v.respond-to(lg) {
+        padding: 0 20px;
+      }
+    }
+
+    .text-defi {
+      margin-top: 12px;
+
+      @include v.respond-to(lg) {
+        max-width: 70%;
+      }
+      @include v.respond-to(xl) {
+        max-width: 60%;
+      }
+    }
+
+    .loop-defi {
+      margin-top: 32px;
+
+      @include v.respond-to(md) {
+        margin-top: 41px;
+      }
+
+      .child-pages-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        list-style-type: none;
+
+        @include v.respond-to(md) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        @include v.respond-to(lg) {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        @include v.respond-to(xl) {
+          grid-template-columns: repeat(4, 1fr);
+        }
+
+        .card-item {
+          padding: 25px 20px;
+          border-radius: 32px;
+          background-color: v.$bg-white;
+
+          .card-title {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 16px;
+
+            img {
+              max-width: 36px;
+              object-fit: contain;
+            }
+          }
+          .card-content {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-end;
+
+            .card-btn {
+              width: 42px;
+              height: 42px;
+              border-radius: 100px;
+              border: 1px solid v.$gray-border;
+              background-color: v.$white-color;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              transition: all 4s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+              span {
+                color: v.$black-color;
+                font-size: 19px;
+                font-weight: 200;
+                transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+              }
+
+              @include v.respond-to(xl) {
+                width: 62px;
+                height: 62px;
+
+                span {
+                  font-size: 22px;
+                }
+
+                &:hover {
+                  background-color: v.$gray-color;
+
+                  span {
+                    color: v.$white-color;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .corsi-section{
+    margin-top: 80px;
+    padding: 0 20px;
+
+    @include v.respond-to(md) {
+      margin-top: 156px;
+    }
+
+    @include v.respond-to(lg) {
+      padding: 0;
+    }
+
+    .corsi-wrap{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      
+      .title-corsi{
+        @include v.respond-to(lg) {
+          padding: 0 20px;
+        }
+      }
+
+      .btn{
+        display: none;
+
+        @include v.respond-to(lg) {
+          display: block;
+        }
+      }
+    }
+
+    .corsi-list{
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+
+      @include v.respond-to(lg) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+      .card{
+        padding: 12px;
+        border: 1px solid v.$gray-border;
+        border-radius: 42px;
+
+        .card-box{
+          display: flex;
+          flex-direction: row;
+          border-radius: 32px;
+          gap: 16px;
+  
+          img{
+            width: 40%;
+            height: auto;
+            aspect-ratio: 1;
+            border-radius: 32px;
+          }
+
+          .card-info{
+            padding: 12px 0 16px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .label{
+              width: fit-content;
+              display: inline;
+              color: v.$red-color;
+            }
+            .durata{
+              width: fit-content;
+              display: inline;
+              padding-left: 8px;
+              color: v.$gray-text;
+            }
+            .card-title{
+              margin-top: 2px;
+            }
+            .card-icon {
+              margin-top: 8px;
+              width: 42px;
+              height: 42px;
+              border-radius: 100px;
+              border: 1px solid v.$gray-border;
+              background-color: v.$white-color;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              transition: all 4s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+              span {
+                color: v.$black-color;
+                font-size: 19px;
+                font-weight: 200;
+                transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+              }
+
+              @include v.respond-to(xl) {
+                width: 62px;
+                height: 62px;
+
+                span {
+                  font-size: 22px;
+                }
+
+                &:hover {
+                  background-color: v.$gray-color;
+
+                  span {
+                    color: v.$white-color;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .mobile-btn-wrap{
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+      
+      .btn{
+        display: block;
+        width: fit-content;
+  
+        @include v.respond-to(lg) {
+          display: none;
+        }
+      }
+    }
+
+
+  }
+  .prodotti-section{
+    margin-top: 69px;
+    padding: 0 20px;
+
+    @include v.respond-to(md) {
+      margin-top: 156px;
+    }
+
+    @include v.respond-to(lg) {
+      padding: 0;
     }
   }
 }
