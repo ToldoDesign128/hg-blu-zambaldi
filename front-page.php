@@ -279,16 +279,18 @@ get_header(); ?>
                         <div class="card-box">
                             <?php the_post_thumbnail('medium', array('class' => '', 'alt' => get_the_title())); ?>
                             <div class="card-info">
-                                <div>
-                                    <p class="label text-small">Corso</p>
-                                    <?php
-                                    $durata = get_field('durata');
-                                    if ($durata) : ?>
-                                        <p class="durata"><?php echo esc_html($durata); ?></p>
-                                    <?php endif; ?>
-                                </div>
+                                <div class="card-wrap">
+                                    <div>
+                                        <p class="label text-small">Corso</p>
+                                        <?php
+                                        $durata = get_field('durata');
+                                        if ($durata) : ?>
+                                            <p class="durata"><?php echo esc_html($durata); ?></p>
+                                        <?php endif; ?>
+                                    </div>
 
-                                <p class="card-title title-h5 medium"><?php the_title(); ?></p>
+                                    <p class="card-title title-h5 medium"><?php the_title(); ?></p>
+                                </div>
 
                                 <a href="<?php echo the_permalink(); ?>" class="card-icon">
                                     <span>
@@ -312,9 +314,9 @@ get_header(); ?>
             $btn_corsi_title = $btn_corsi['title'];
             $btn_corsi_target = $btn_corsi['target'] ? $btn_corsi['target'] : '_self';
         ?>
-        <div class="mobile-btn-wrap">
-            <a class="btn text-small semibold" href="<?php echo esc_url($btn_corsi_url); ?>" target="<?php echo esc_attr($btn_corsi_target); ?>"><?php echo esc_html($btn_corsi_title); ?></a>
-        </div>
+            <div class="mobile-btn-wrap">
+                <a class="btn text-small semibold" href="<?php echo esc_url($btn_corsi_url); ?>" target="<?php echo esc_attr($btn_corsi_target); ?>"><?php echo esc_html($btn_corsi_title); ?></a>
+            </div>
         <?php endif; ?>
     </section>
     <!-- Prodotti e Assistenza -->
@@ -352,25 +354,29 @@ get_header(); ?>
             $assistenza_testo = get_field('testo', $assistenza_page->ID);
             $assistenza_immagine = get_field('immagine', $assistenza_page->ID);
         ?>
-            <section class="card-section">
+            <div class="card-section">
                 <div class="card-prodotti">
-                    <h2><?php echo esc_html($prodotti_titolo); ?></h2>
-                    <div><?php echo $prodotti_testo; ?></div>
+                    <div class="card-content">
+                        <p class="title-h5 semibold uppercase"><?php echo esc_html($prodotti_titolo); ?></p>
+                        <div><?php echo substr($prodotti_testo, 0, 100); ?></div>
+                        <a class="card-icon" href="<?php echo get_permalink($prodotti_page->ID); ?>"><span>+</span></a>
+                    </div>
                     <?php if ($prodotti_immagine): ?>
                         <img src="<?php echo esc_url($prodotti_immagine['url']); ?>" alt="<?php echo esc_attr($prodotti_immagine['alt']); ?>">
                     <?php endif; ?>
-                    <a href="<?php echo get_permalink($prodotti_page->ID); ?>"><span>+</span></a>
                 </div>
 
                 <div class="card-assisstenza">
-                    <h2><?php echo esc_html($assistenza_titolo); ?></h2>
-                    <div><?php echo $assistenza_testo; ?></div>
+                    <div class="card-content">
+                        <p class="title-h5 semibold uppercase"><?php echo esc_html($assistenza_titolo); ?></p>
+                        <div><?php echo substr($assistenza_testo, 0, 100); ?></div>
+                        <a class="card-icon" href="<?php echo get_permalink($assistenza_page->ID); ?>"><span>+</span></a>
+                    </div>
                     <?php if ($assistenza_immagine): ?>
                         <img src="<?php echo esc_url($assistenza_immagine['url']); ?>" alt="<?php echo esc_attr($assistenza_immagine['alt']); ?>">
                     <?php endif; ?>
-                    <a href="<?php echo get_permalink($assistenza_page->ID); ?>"><span>+</span></a>
                 </div>
-            </section>
+            </div>
         <?php
         endif;
         ?>

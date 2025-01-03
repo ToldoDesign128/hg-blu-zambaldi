@@ -1,8 +1,8 @@
 <section class="form">
 
     <?php
-    $title = get_field('titolo');
-    $text = get_field('testo_hero');
+    $title = get_field('titolo_form');
+    $text = get_field('testo_form');
     $form = get_field('form');
 
     if ($title) : ?>
