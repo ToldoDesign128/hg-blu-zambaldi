@@ -10,9 +10,13 @@ $gray-color: rgb(108, 112, 122);
 $l-gray-color: hsl(240, 14%, 85%);
 $gray-border: hsl(0, 0%, 92%);
 
-$d-white-color: hsl(0, 0%, 96%);
+$d-white-color: #f5f5f5;
 $bg-white: #F6F6F8;
 $white-color: rgb(255, 255, 255);
 
-$black-color: rgb(28, 28, 28);
-$black-title-color: rgb(70, 70, 81);
+$black-color: #1c1c1c;
+$black-title-color: #464651;
+
+.black-title {
+  color: $black-title-color;
+}

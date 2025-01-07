@@ -1,6 +1,9 @@
 // Export Pages
 @use "/assets/scss/variable/variable" as v;
+
+@use "/assets/scss/page/about" as about;
 @use "/assets/scss/page/front-page" as front-page;
+@use "/assets/scss/page/testimonianze" as testimonianze;
 
 // General Style of Page
 

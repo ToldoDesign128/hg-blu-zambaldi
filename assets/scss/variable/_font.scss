@@ -2,11 +2,12 @@
 @use "color" as color;
 @use "device" as device;
 
-$primary-font: "Futura PT", "Roboto", sans-serif;
+$primary-font: "futura-pt", sans-serif;
 
 .title-bg {
   font-family: $primary-font;
   color: color.$gray-border;
+  opacity: .3;
   font-size: clamp(120px, 8vw, 190px);
   line-height: 1.1;
   font-weight: 800;

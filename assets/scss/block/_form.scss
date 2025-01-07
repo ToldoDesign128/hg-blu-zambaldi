@@ -1,0 +1,69 @@
+// Form
+@use "/assets/scss/variable/variable" as v;
+
+.form{
+    margin: 85px 9px 0px 9px;
+    border-radius: 42px;
+    border: 1px solid v.$gray-border;
+    padding: 11px;
+
+    @include v.respond-to(lg){
+        margin: 173px auto 0px auto; 
+    }
+
+    .form-wrap{
+        background-color: v.$bg-white;
+        border-radius: 32px;
+        padding: 56px 28px 44px 28px;
+        text-align: center;
+
+        @include v.respond-to(lg){
+            padding: 82px 0px 95px 0px;
+        }
+
+        .form-title{
+            color: v.$black-title-color;
+            @include v.respond-to(lg){
+                margin: 0 auto 0 auto;
+                max-width: 70%;
+            }
+            @include v.respond-to(xl){
+                max-width: 65%;
+            }
+            @include v.respond-to(xxl){
+                max-width: 60%;
+            }
+        }
+
+        .form-text{
+            color: v.$black-title-color;
+            margin-top: 9px;
+
+            @include v.respond-to(lg){
+                margin: 14px auto 0 auto;
+                max-width: 70%;
+            }
+            @include v.respond-to(xl){
+                max-width: 65%;
+            }
+            @include v.respond-to(xxl){
+                max-width: 60%;
+            }
+        }
+
+        .form-content{
+            margin-top: 30px;
+
+            @include v.respond-to(lg){
+                margin: 50px auto 0 auto;
+                max-width: 70%;
+            }
+            @include v.respond-to(xl){
+                max-width: 65%;
+            }
+            @include v.respond-to(xxl){
+                max-width: 60%;
+            }
+        }
+    }
+}

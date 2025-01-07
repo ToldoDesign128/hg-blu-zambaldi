@@ -12,7 +12,7 @@ get_header(); ?>
             if ($title) : ?>
                 <h1 class="title title-h1">
                     <?php echo esc_html($title); ?>
-                    <span class="title-bg"><?php echo esc_html($title); ?></span>
+                    <span class="title-bg semibold"><?php echo esc_html($title); ?></span>
                 </h1>
             <?php endif;
             if ($text) : ?>
@@ -159,7 +159,7 @@ get_header(); ?>
             }
 
             if ($title_about) : ?>
-                <h2 class="title-about title-h3 medium uppercase">
+                <h2 class="title-about title-h3 medium uppercase black-title">
                     <?php echo esc_html($title_about); ?>
                 </h2>
             <?php endif;
@@ -180,7 +180,7 @@ get_header(); ?>
         $text_defi = get_field('testo_defibrillatori');
 
         if ($title_defi) : ?>
-            <h2 class="title-defi title-h3 medium uppercase">
+            <h2 class="title-defi title-h3 medium uppercase black-title">
                 <?php echo esc_html($title_defi); ?>
             </h2>
         <?php endif;
@@ -192,7 +192,7 @@ get_header(); ?>
         <div class="loop-defi">
             <?php
             // ID della pagina "Defibrillatori"
-            $parent_id = 21;
+            $parent_id = 407;
 
             // Query per ottenere tutte le pagine figlie del genitore specificato
             $args = array(
@@ -245,7 +245,7 @@ get_header(); ?>
             $title_corsi = get_field('titolo_corsi');
 
             if ($title_corsi) : ?>
-                <h2 class="title-corsi title-h3 medium uppercase">
+                <h2 class="title-corsi title-h3 medium uppercase black-title">
                     <?php echo esc_html($title_corsi); ?>
                 </h2>
             <?php endif;
@@ -326,7 +326,7 @@ get_header(); ?>
         $text_prodotti = get_field('testo_prodotti');
 
         if ($title_prodotti) : ?>
-            <h2 class="title-prodotti title-h3 medium uppercase">
+            <h2 class="title-prodotti title-h3 medium uppercase black-title">
                 <?php echo esc_html($title_prodotti); ?>
             </h2>
         <?php endif;

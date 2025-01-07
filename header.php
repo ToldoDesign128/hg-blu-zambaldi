@@ -10,6 +10,8 @@
     <meta name="theme-color" content="#fff">
     <meta name="description" content="<?php bloginfo('description'); ?>">
 
+    <link rel="stylesheet" href="https://use.typekit.net/eln2gzh.css">
+
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>" type="image/x-icon">
 
     <title>
