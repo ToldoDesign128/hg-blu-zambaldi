@@ -81,6 +81,7 @@
         gap: 24px;
 
         @include v.respond-to(md) {
+          padding: 0;
           grid-template-columns: repeat(2, 1fr);
           gap: 33px;
         }
@@ -203,11 +204,11 @@
       color: v.$white-color;
 
       @include v.respond-to(md) {
-        padding: 108px 198px 119px 198px;
+        padding: 100px 198px 80px 198px;
       }
 
       @include v.respond-to(big) {
-        padding: 138px 398px 149px 398px;
+        padding: 110px 398px 88px 398px;
       }
 
       .img-mobile {

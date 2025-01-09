@@ -1,0 +1,233 @@
+// Assistenza
+@use "/assets/scss/variable/variable" as v;
+
+.assistenza {
+  overflow-x: clip;
+  .hero-assistenza {
+    text-align: center;
+
+    .title {
+      padding: 0px 20px;
+      position: relative;
+
+      span {
+        position: absolute;
+        left: 50%;
+        top: -50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        white-space: nowrap;
+      }
+    }
+
+    .text {
+      padding: 0px 20px;
+      margin-top: 12px;
+
+      @include v.respond-to(lg) {
+        margin: 14px auto 0 auto;
+        max-width: 70%;
+      }
+      @include v.respond-to(xl) {
+        max-width: 60%;
+      }
+    }
+
+    .block-img {
+      position: relative;
+      z-index: 0;
+      margin-top: 40px;
+
+      img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+
+        @include v.respond-to(lg) {
+          aspect-ratio: 20/7;
+          border-radius: 42px;
+        }
+      }
+    }
+    .block-txt {
+      position: relative;
+      z-index: 1;
+      margin: -50px 5px 0px 5px;
+      border-radius: 42px;
+      border: 1px solid v.$gray-border;
+      padding: 11px;
+      background-color: v.$white-color;
+
+      @include v.respond-to(lg) {
+        max-width: 80%;
+        margin: -100px auto 0 auto;
+      }
+
+      .block-txt-wrap {
+        position: relative;
+        overflow: clip;
+        border-radius: 32px;
+        background-color: v.$red-color;
+        padding: 68px 0 98px 0;
+        color: v.$white-color;
+
+        @include v.respond-to(lg) {
+          padding: 90px 0;
+        }
+
+        .title-block {
+          padding: 0px 19px;
+
+          @include v.respond-to(lg) {
+            margin: 0 auto;
+            max-width: 80%;
+          }
+          @include v.respond-to(xl) {
+            max-width: 70%;
+          }
+        }
+        .text-block {
+          padding: 0px 19px;
+          margin-top: 32px;
+
+          @include v.respond-to(lg) {
+            margin: 24px auto 0 auto;
+            max-width: 80%;
+          }
+          @include v.respond-to(xl) {
+            max-width: 70%;
+          }
+          @include v.respond-to(xxl) {
+            max-width: 60%;
+          }
+        }
+
+        .img-mobile {
+          svg {
+            display: block;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 20px;
+            height: 250px;
+
+            @include v.respond-to(md) {
+              display: none;
+            }
+          }
+        }
+        .img-desk {
+          svg {
+            display: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 20px;
+            height: 250px;
+
+            @include v.respond-to(md) {
+              display: block;
+              height: auto;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .tipologia {
+    margin-top: 86px;
+    padding: 0 20px;
+
+    @include v.respond-to(md) {
+      margin-top: 132px;
+    }
+
+    @include v.respond-to(lg) {
+      padding: 0;
+    }
+    .title {
+      @include v.respond-to(lg) {
+        padding: 0 20px;
+      }
+    }
+
+    .text {
+      margin-top: 12px;
+
+      @include v.respond-to(lg) {
+        max-width: 70%;
+        padding: 0 20px;
+      }
+      @include v.respond-to(xl) {
+        max-width: 60%;
+      }
+    }
+
+    .repeater-assistenza {
+      margin-top: 45px;
+
+      @include v.respond-to(lg) {
+        margin-top: 62px;
+      }
+
+      .assistenza-list {
+        list-style: none;
+        counter-reset: item;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+
+        @include v.respond-to(md) {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 36px;
+        }
+        @include v.respond-to(lg) {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        @include v.respond-to(xl) {
+          grid-template-columns: repeat(4, 1fr);
+          gap: 44px;
+        }
+
+        .link-item {
+          border-radius: 32px;
+          background-color: v.$bg-white;
+          padding: 30px 20px;
+          font-size: 22px;
+          line-height: 27px;
+          font-weight: 600;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+
+          &::before {
+            content: "0" counter(item);
+            counter-increment: item;
+            color: v.$red-color;
+          }
+
+          @include v.respond-to(lg) {
+            padding: 31px 28px 45px 28px;
+            font-size: 25px;
+            line-height: 32px;
+          }
+
+          .text {
+            max-width: none;
+            padding: 0;
+            margin: 14px 0 0 0;
+            text-transform: none;
+            font-size: clamp(19px, 2vw, 22px);
+            font-weight: 400;
+            line-height: 1.5;
+
+            @include v.respond-to(lg) {
+              margin-top: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

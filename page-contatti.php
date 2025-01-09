@@ -1,15 +1,15 @@
 <?php
 /* Template Name: Contatti */
 get_header(); ?>
-<main class="contatatti">
+<main class="contatti">
     <!-- Hero -->
-    <section class="hero-contatti">
-        <h1 class="hero-title">
+    <section class="hero-contatti container">
+        <h1 class="hero-title title-h2 medium black-title uppercase">
             <?php the_title(); ?>
-            <span><?php the_title(); ?></span>
+            <span class="title-bg semibold uppercas"><?php the_title(); ?></span>
         </h1>
         <div class="hero-info">
-            <div class="info-link">
+            <div class="info-link"> 
                 <?php
                 if (have_rows('repeater_link')): ?>
                     <ul class="link-list">
@@ -26,10 +26,12 @@ get_header(); ?>
 
                                 <li class="link-item">
                                     <?php if ($image) : ?>
-                                        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                                        <div class="image-wrap">
+                                            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                                        </div>
                                     <?php endif; ?>
 
-                                    <a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
+                                    <a class="text-body" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
                                 </li>
 
                         <?php
@@ -51,7 +53,7 @@ get_header(); ?>
         </div>
     </section>
     <!-- Form -->
-    <?php get_template_part('/template-parts/faq') ?>
+    <?php get_template_part('/template-parts/form') ?>
     <!-- FAQ -->
     <?php get_template_part('/template-parts/faq') ?>
 </main>

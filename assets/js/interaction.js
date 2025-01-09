@@ -9,3 +9,11 @@ jQuery("#hamburgerBtn").click(function () {
     jQuery("#menuMobile").toggleClass("panel-active");
     jQuery("body").toggleClass("stop-scroll");
 })
+
+// FAQ
+jQuery(document).ready(function($) {
+    $('.faq-icon').on('click', function() {
+      var $itemWrap = $(this).closest('.item-wrap');
+      $itemWrap.find('.risposta').toggleClass('risposta-active');
+    });
+  });

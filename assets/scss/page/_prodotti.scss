@@ -1,14 +1,24 @@
-// About
+// Prodotti
 @use "/assets/scss/variable/variable" as v;
 
-.about {
-  overflow-x: clip;
-  .hero-about {
+.prodotti {
+  overflow-x: hidden;
+
+  .hero-prodotti {
     text-align: center;
 
+    .titoletto {
+      color: v.$red-color;
+    }
+
     .title {
+      margin-top: 12px;
       padding: 0px 20px;
       position: relative;
+
+      @include v.respond-to(lg) {
+        margin: 5px;
+      }
 
       span {
         position: absolute;
@@ -45,7 +55,7 @@
         object-fit: cover;
 
         @include v.respond-to(lg) {
-          aspect-ratio: 20/9;
+          aspect-ratio: 20/7;
           border-radius: 42px;
         }
       }
@@ -135,32 +145,64 @@
         }
       }
     }
-    .repeater {
-      margin-top: 40px;
+  }
+  .fornitori {
+    margin-top: 86px;
+    padding: 0 20px;
+
+    @include v.respond-to(md) {
+      margin-top: 132px;
+    }
+
+    @include v.respond-to(lg) {
+      padding: 0;
+    }
+    .title-fornitori {
+      @include v.respond-to(lg) {
+        padding: 0 20px;
+      }
+    }
+
+    .text-fornitori {
+      margin-top: 12px;
 
       @include v.respond-to(lg) {
-        margin-top: 134px;
+        max-width: 70%;
+        padding: 0 20px;
       }
+      @include v.respond-to(xl) {
+        max-width: 60%;
+      }
+    }
+    .repeater-fornitori {
+      margin-top: 62px;
 
-      .repeater-list {
-        display: flex;
+      .fornitori-list {
         width: 100%;
-        flex-direction: column;
+        display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         list-style: none;
         gap: 39px;
 
         @include v.respond-to(md) {
-          flex-direction: row;
+          margin-top: 83px;
+          gap: 89px;
         }
 
         .link-item {
+          width: 44%;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
           gap: 20px;
+
+          @include v.respond-to(md) {
+            width: 20%;
+            min-width: 200px;
+          }
 
           .icon {
             width: fit-content;
@@ -186,12 +228,14 @@
           }
           .link-text {
             max-width: 80%;
+            text-align: center;
+            word-break: break-all;
           }
         }
       }
     }
   }
-  .azienda {
+  .brand {
     margin-top: 86px;
     padding: 0 20px;
 
@@ -202,159 +246,55 @@
     @include v.respond-to(lg) {
       padding: 0;
     }
-    .title-azienda {
+    .title-brand {
+      max-width: 80%;
       @include v.respond-to(lg) {
         padding: 0 20px;
       }
     }
 
-    .text-azienda {
-      margin-top: 12px;
-
-      @include v.respond-to(lg) {
-        max-width: 70%;
-        padding: 0 20px;
-      }
-      @include v.respond-to(xl) {
-        max-width: 60%;
-      }
-    }
-
-    .team {
-      margin-top: 75px;
+    .repeater-brand {
+      margin-top: 28px;
 
       @include v.respond-to(md) {
-        margin-top: 132px;
-      }
-      @include v.respond-to(xl) {
-        margin-top: 164px;
+        margin-top: 83px;
       }
 
-      .title-team {
-        padding: 0 20px;
-        text-align: center;
-
-        @include v.respond-to(lg) {
-          padding: 0;
-        }
-      }
-
-      .repeater-team {
-        margin-top: 32px;
-        padding: 0 10px;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 45px;
+      .loghi-list {
+        margin-top: 28px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 40px;
         list-style: none;
-
-        @include v.respond-to(md) {
-          margin-top: 60px;
-          grid-template-columns: repeat(2, 1fr);
-        }
+        
         @include v.respond-to(lg) {
-          grid-template-columns: repeat(3, 1fr);
-          gap: 0 66px;
+            justify-content: center;
+            gap: 130px;
         }
 
-        .card-team {
-          position: relative;
-
-          @include v.respond-to(lg) {
-            &:nth-child(2) {
-              margin-top: 100px;
-            }
-            &:nth-child(5) {
-              margin-top: 100px;
-            }
-            &:nth-child(8) {
-              margin-top: 100px;
-            }
-            &:nth-child(11) {
-              margin-top: 100px;
-            }
-          }
-          .card-border {
-            position: absolute;
-            z-index: -1;
+        .logo-item {
+          a {
             display: block;
-            border: 1px solid v.$black-color;
-            border-radius: 42px;
-            width: 100%;
-            aspect-ratio: 1;
-          }
-          p {
-            padding: 20px 30px 0 30px;
-            max-width: 50%;
-
-            @include v.respond-to(lg) {
-              padding: 30px 40px 0 40px;
-              font-size: clamp(31px, 2.5vw, 35px);
-            }
-          }
-          .img-wrap {
-            margin: 11px 35px 0 35px;
-            border-radius: 32px;
-            overflow: hidden;
-            aspect-ratio: 0.93;
-
-            @include v.respond-to(lg) {
-              margin: 20px 25px 0 25px;
-            }
 
             img {
-              height: 100%;
+              max-height: 77px;
+              display: block;
               width: 100%;
+              object-fit: contain;
+              filter: grayscale(1);
+              transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
             }
-          }
-          .card-link {
-            margin-top: 26px;
-            padding: 0 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
 
-            .link-item {
-              display: flex;
-              align-items: center;
-              gap: 10px;
+            &:hover {
+              img {
+                filter: grayscale(0);
+              }
             }
           }
         }
       }
-    }
-  }
-
-  .testimonianze {
-    margin-top: 86px;
-    padding: 0 20px;
-
-    @include v.respond-to(md) {
-      margin-top: 132px;
-    }
-
-    @include v.respond-to(lg) {
-      padding: 0;
-    }
-    .title-testimonianze {
-      @include v.respond-to(lg) {
-        padding: 0 20px;
-      }
-    }
-
-    .text-testimonianze {
-      margin-top: 12px;
-
-      @include v.respond-to(lg) {
-        max-width: 70%;
-        padding: 0 20px;
-      }
-      @include v.respond-to(xl) {
-        max-width: 60%;
-      }
-    }
-
-    .card {
-      margin-top: 31px;
     }
   }
 }

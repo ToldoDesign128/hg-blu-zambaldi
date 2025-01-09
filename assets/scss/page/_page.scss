@@ -2,7 +2,10 @@
 @use "/assets/scss/variable/variable" as v;
 
 @use "/assets/scss/page/about" as about;
+@use "/assets/scss/page/assistenza" as assistenza;
+@use "/assets/scss/page/contatti" as contatti;
 @use "/assets/scss/page/front-page" as front-page;
+@use "/assets/scss/page/prodotti" as prodotti;
 @use "/assets/scss/page/testimonianze" as testimonianze;
 
 // General Style of Page
@@ -14,7 +17,7 @@ body {
   .index,
   .assistenza,
   .about,
-  .contatatti,
+  .contatti,
   .defibrillatori,
   .formazione,
   .prodotti,

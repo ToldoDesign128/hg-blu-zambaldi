@@ -1,0 +1,102 @@
+// Contatti
+@use "/assets/scss/variable/variable" as v;
+
+.contatti {
+  overflow-x: hidden;
+  .hero-contatti {
+    .hero-title {
+      text-align: center;
+      padding: 0px 20px;
+      position: relative;
+
+      @include v.respond-to(lg) {
+        padding: 0;
+        text-align: left;
+      }
+
+      span {
+        position: absolute;
+        left: 50%;
+        top: -50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        white-space: nowrap;
+
+        @include v.respond-to(lg) {
+            left: 0;
+            transform: translateX(0);
+          }
+      }
+    }
+    .hero-info{
+        margin-top: 81px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        @include v.respond-to(lg) {
+            margin-top: 28px;
+            flex-direction: row;
+            align-items: center;
+        }
+        
+        .info-link{
+            padding: 0px 20px;
+
+            @include v.respond-to(lg) {
+                padding: 0;
+            }
+
+            .link-list{
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+                .link-item{
+                    display: flex;
+                    align-items: center;
+                    gap: 19px;
+
+                    .image-wrap{
+                        padding: 10px;
+                        border: 1px solid v.$gray-border;
+                        border-radius: 200px;
+                    }
+
+                    a{
+                        max-width: 16ch;
+                        opacity: 1;
+                        transition: all .6s cubic-bezier(.215, .61, .355, 1);
+
+                        @include v.respond-to(lg) {
+                            &:hover{
+                                opacity: .6;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .map-container{
+            margin-top: 41px;
+
+            @include v.respond-to(lg) {
+                margin-top: 0;
+                border: 1px solid v.$gray-border;
+                border-radius: 42px;
+                padding: 10px;
+
+                .map{
+                    border-radius: 32px;
+                    overflow: hidden;
+                    height: 100%;
+
+                    iframe{
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+  }
+}

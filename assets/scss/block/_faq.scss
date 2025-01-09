@@ -1,0 +1,100 @@
+// FAQ
+@use "/assets/scss/variable/variable" as v;
+
+.faq {
+  padding: 0px 20px;
+
+  @include v.respond-to(lg) {
+    padding: 0px;
+  }
+
+  .faq-title {
+    margin-top: 65px;
+    @include v.respond-to(lg) {
+      margin-top: 105px;
+      padding: 0 20px;
+    }
+  }
+
+  .faq-text {
+    margin-top: 12px;
+
+    @include v.respond-to(lg) {
+      padding: 0 20px;
+      margin-top: 16px;
+    }
+  }
+
+  .faq-list {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+
+    @include v.respond-to(lg) {
+      margin-top: 34px;
+      gap: 24px;
+    }
+
+    .faq-item {
+      border-radius: 42px;
+      border: 1px solid v.$gray-border;
+      padding: 10px;
+
+      .item-wrap {
+        border-radius: 32px;
+        background-color: v.$bg-white;
+        padding: 16px 19px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        @include v.respond-to(lg) {
+          padding: 24px 40px;
+        }
+
+        .domanda {
+          width: 80%;
+        }
+
+        .faq-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 42px;
+          height: 42px;
+          background-color: v.$white-color;
+          border-radius: 100px;
+          border: 1px solid v.$gray-border;
+          cursor: pointer;
+
+          .icon {
+            font-family: Roboto, sans-serif;
+            font-weight: 100;
+          }
+
+          @include v.respond-to(lg) {
+            width: 56px;
+            height: 56px;
+          }
+        }
+
+        .risposta {
+          width: 100%;
+          max-height: 0;
+          margin-top: 0px;
+          overflow: clip;
+          transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+
+        .risposta-active {
+          max-height: 1000px;
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+}
