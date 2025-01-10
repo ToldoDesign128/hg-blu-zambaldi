@@ -22,4 +22,21 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         effect: 'fade',
     });
+
+    var swiper4 = new Swiper(".swiperGallery", {
+        slidesPerView: 1,
+        spaceBetween: 23,
+        loop: true,
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+            },
+            1280: {
+                slidesPerView: 3,
+            },
+            1560: {
+                slidesPerView: 4,
+            },
+        },
+    });
 });

@@ -7,16 +7,20 @@ $d-red-gradient: rgb(179, 35, 35);
 $d-gray-color: rgb(70, 70, 81);
 $gray-text: rgb(80, 83, 90);
 $gray-color: rgb(108, 112, 122);
-$l-gray-color: hsl(240, 14%, 85%);
-$gray-border: hsl(0, 0%, 92%);
+$l-gray-color: #d3d3de;
+$gray-border: #ebebeb;
 
 $d-white-color: #f5f5f5;
 $bg-white: #F6F6F8;
-$white-color: rgb(255, 255, 255);
+$white-color: #ffffff;
 
 $black-color: #1c1c1c;
 $black-title-color: #464651;
 
 .black-title {
   color: $black-title-color;
+}
+
+.red-title {
+  color: $red-color;
 }

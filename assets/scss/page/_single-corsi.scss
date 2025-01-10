@@ -1,0 +1,297 @@
+// Single Corso
+@use "/assets/scss/variable/variable" as v;
+
+.post-corsi {
+  overflow-x: hidden;
+
+  .hero-post-corsi {
+    padding: 10px;
+    border-radius: 42px;
+    border: 1px solid v.$gray-border;
+    background-image: linear-gradient(180deg, v.$white-color, v.$d-white-color);
+
+    .hero-wrap {
+      padding: 53px 19px 113px 19px;
+      position: relative;
+      overflow: clip;
+      border-radius: 32px;
+      background-image: linear-gradient(
+        180deg,
+        v.$l-red-gradient,
+        v.$d-red-gradient
+      );
+      text-align: center;
+      color: v.$white-color;
+
+      @include v.respond-to(md) {
+        padding: 100px 198px 80px 198px;
+      }
+
+      @include v.respond-to(big) {
+        padding: 110px 398px 88px 398px;
+      }
+
+      .img-mobile {
+        svg {
+          display: block;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 0;
+          height: 250px;
+
+          @include v.respond-to(md) {
+            display: none;
+          }
+        }
+      }
+      .img-desk {
+        svg {
+          display: none;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 20px;
+          height: 250px;
+
+          @include v.respond-to(md) {
+            display: block;
+            height: auto;
+            width: 100%;
+          }
+        }
+      }
+
+      .cta-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .text-block {
+          margin-top: 24px;
+        }
+        .btn {
+          position: relative;
+          z-index: 1;
+          margin-top: 24px;
+          display: block;
+          width: fit-content;
+
+          @include v.respond-to(md) {
+            margin-top: 34px;
+
+            &:hover {
+              background: v.$red-color;
+              border: 1px solid v.$white-color;
+              color: v.$white-color;
+            }
+          }
+        }
+      }
+    }
+  }
+  .post-content {
+    margin-top: 86px;
+    padding: 0 20px;
+
+    @include v.respond-to(md) {
+      margin-top: 132px;
+    }
+
+    @include v.respond-to(lg) {
+      padding: 0;
+    }
+
+    .content-info {
+      .title-content {
+        @include v.respond-to(lg) {
+          padding: 0 20px;
+        }
+      }
+      .text-content {
+        margin-top: 12px;
+
+        @include v.respond-to(lg) {
+          max-width: 70%;
+          padding: 0 20px;
+        }
+        @include v.respond-to(xl) {
+          max-width: 60%;
+        }
+      }
+    }
+    .content-repeater {
+      margin-top: 51px;
+
+      @include v.respond-to(lg) {
+        margin-top: 62px;
+      }
+
+      .content-list {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        gap: 39px;
+
+        @include v.respond-to(md) {
+          margin-top: 83px;
+          gap: 89px;
+        }
+        .link-item {
+          width: 44%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+
+          @include v.respond-to(md) {
+            width: 20%;
+            min-width: 200px;
+          }
+
+          .icon {
+            width: fit-content;
+            border-radius: 200px;
+            border: 1px solid v.$gray-border;
+            background-color: v.$white-color;
+            padding: 10px;
+
+            .icon-item {
+              width: 60px;
+              height: 60px;
+              border-radius: 200px;
+              border: 1px solid v.$gray-border;
+              background-image: linear-gradient(
+                180deg,
+                v.$white-color 0%,
+                v.$d-white-color 100%
+              );
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+          .link-text {
+            max-width: 80%;
+            text-align: center;
+            word-break: break-all;
+          }
+        }
+      }
+    }
+    .programma {
+      margin-top: 71px;
+      width: 100%;
+      border-radius: 42px;
+      background-color: #d2d2dd;
+      padding: 53px 17px 21px 17px;
+
+      @include v.respond-to(lg) {
+        margin-top: 141px;
+        padding: 51px 55px 41px 55px;
+      }
+      @include v.respond-to(xl) {
+        margin-top: 171px;
+      }
+
+      .programma-info {
+        display: flex;
+        gap: 15px;
+        align-items: flex-end;
+
+        .text-programma {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+
+          span {
+            height: 40px;
+            width: 3px;
+            background-color: v.$black-title-color;
+          }
+        }
+      }
+      .repeater-programma {
+        .programma-list {
+          margin-top: 20px;
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 29px;
+
+          @include v.respond-to(md) {
+            margin-top: 32px;
+            grid-template-columns: 1fr 1fr;
+          }
+          @include v.respond-to(lg) {
+            grid-template-columns: 1fr 1fr 1fr;
+          }
+
+          .link-item {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 22px 12px;
+            border-radius: 32px;
+            background-color: v.$white-color;
+
+            @include v.respond-to(md) {
+              padding: 30px 27px 98px 37px;
+            }
+            @include v.respond-to(xl) {
+              padding: 40px 37px 128px 37px;
+            }
+
+            .text {
+              ul,
+              ol {
+                margin-left: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .gallery {
+    margin-top: 86px;
+    padding: 0 20px;
+
+    @include v.respond-to(md) {
+      margin-top: 132px;
+    }
+
+    @include v.respond-to(lg) {
+      padding: 0;
+    }
+
+    .swiper {
+      overflow: visible;
+
+      .swiper-wrapper {
+        .swiper-slide {
+          padding: 10px;
+          border-radius: 42px;
+          border: 1px solid v.$gray-border;
+          background-image: linear-gradient(
+            180deg,
+            v.$white-color,
+            v.$d-white-color
+          );
+
+          img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4/3;
+            border-radius: 32px;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}

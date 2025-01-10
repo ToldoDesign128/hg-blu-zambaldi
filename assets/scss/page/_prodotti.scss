@@ -271,7 +271,7 @@
         
         @include v.respond-to(lg) {
             justify-content: center;
-            gap: 130px;
+            gap: 40px 90px;
         }
 
         .logo-item {

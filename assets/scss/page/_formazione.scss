@@ -1,0 +1,264 @@
+// Formazione
+@use "/assets/scss/variable/variable" as v;
+
+.formazione {
+  overflow-x: hidden;
+
+  .hero-formazione {
+    text-align: center;
+
+    .title {
+      margin-top: 12px;
+      padding: 0px 20px;
+      position: relative;
+
+      @include v.respond-to(lg) {
+        margin: 5px;
+      }
+
+      span {
+        position: absolute;
+        left: 50%;
+        top: -50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        white-space: nowrap;
+      }
+    }
+
+    .text {
+      padding: 0px 20px;
+      margin-top: 12px;
+
+      @include v.respond-to(lg) {
+        margin: 14px auto 0 auto;
+        max-width: 70%;
+      }
+      @include v.respond-to(xl) {
+        max-width: 60%;
+      }
+    }
+  }
+  .loop-corsi {
+    margin-top: 86px;
+    padding: 0 20px;
+
+    @include v.respond-to(md) {
+      margin-top: 132px;
+    }
+
+    @include v.respond-to(lg) {
+      padding: 0;
+    }
+    .title {
+      @include v.respond-to(lg) {
+        padding: 0 20px;
+      }
+    }
+    .corsi-list {
+      margin-top: 27px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+      list-style: none;
+
+      @include v.respond-to(lg) {
+        margin-top: 29px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 21px 18px;
+      }
+
+      .card {
+        padding: 12px;
+        border: 1px solid v.$gray-border;
+        border-radius: 42px;
+
+        .card-box {
+          display: flex;
+          flex-direction: row;
+          border-radius: 32px;
+          background-color: v.$bg-white;
+          gap: 16px;
+
+          img {
+            width: 40%;
+            height: auto;
+            max-height: fit-content;
+            aspect-ratio: 1;
+            border-radius: 32px;
+          }
+
+          .card-info {
+            padding: 12px 0 16px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            @include v.respond-to(lg) {
+              width: 50%;
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-between;
+            }
+
+            .card-wrap {
+              max-width: 95%;
+              display: flex;
+              flex-direction: column;
+
+              @include v.respond-to(lg) {
+                max-width: 70%;
+              }
+
+              .label {
+                width: fit-content;
+                display: inline;
+                color: v.$red-color;
+              }
+              .durata {
+                width: fit-content;
+                display: inline;
+                padding-left: 8px;
+                color: v.$gray-text;
+              }
+              .card-title {
+                margin-top: 2px;
+                word-break: break-all;
+              }
+            }
+            .card-icon {
+              margin-top: 8px;
+              width: 42px;
+              height: 42px;
+              border-radius: 100px;
+              border: 1px solid v.$gray-border;
+              background-color: v.$white-color;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              transition: all 4s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+              span {
+                color: v.$black-color;
+                font-size: 19px;
+                font-weight: 200;
+                transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+              }
+
+              @include v.respond-to(xl) {
+                width: 62px;
+                height: 62px;
+
+                span {
+                  font-size: 22px;
+                }
+
+                &:hover {
+                  background-color: v.$gray-color;
+
+                  span {
+                    color: v.$white-color;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .valori {
+    margin-top: 86px;
+    padding: 0 20px;
+
+    @include v.respond-to(md) {
+      margin-top: 132px;
+    }
+
+    @include v.respond-to(lg) {
+      padding: 0;
+    }
+
+    .valori-info {
+      .title-valori {
+        @include v.respond-to(lg) {
+          padding: 0 20px;
+        }
+      }
+      .text-valori {
+        margin-top: 12px;
+
+        @include v.respond-to(lg) {
+          max-width: 70%;
+          padding: 0 20px;
+        }
+        @include v.respond-to(xl) {
+          max-width: 60%;
+        }
+      }
+    }
+    .valori-repeater {
+      margin-top: 51px;
+
+      @include v.respond-to(lg) {
+        margin-top: 62px;
+      }
+
+      .valori-list {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        gap: 39px;
+
+        @include v.respond-to(md) {
+          margin-top: 83px;
+          gap: 89px;
+        }
+        .link-item {
+          width: 44%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+
+          @include v.respond-to(md) {
+            width: 20%;
+            min-width: 200px;
+          }
+
+          .icon {
+            width: fit-content;
+            border-radius: 200px;
+            border: 1px solid v.$gray-border;
+            background-color: v.$white-color;
+            padding: 10px;
+
+            .icon-item {
+              width: 60px;
+              height: 60px;
+              border-radius: 200px;
+              border: 1px solid v.$gray-border;
+              background-image: linear-gradient(
+                180deg,
+                v.$white-color 0%,
+                v.$d-white-color 100%
+              );
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+          .link-text {
+            max-width: 80%;
+            text-align: center;
+            word-break: break-all;
+          }
+        }
+      }
+    }
+  }
+}

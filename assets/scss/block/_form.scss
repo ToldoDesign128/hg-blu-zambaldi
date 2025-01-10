@@ -7,7 +7,7 @@
     border: 1px solid v.$gray-border;
     padding: 11px;
 
-    @include v.respond-to(lg){
+    @include v.respond-to(md){
         margin: 143px auto 0px auto; 
     }
 
