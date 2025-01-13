@@ -1,4 +1,4 @@
-<section class="form container">
+<section id="formBlock" class="form container">
 
     <div class="form-wrap">
 

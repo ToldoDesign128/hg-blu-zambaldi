@@ -7,6 +7,11 @@ class Custom_Walker_Nav_Menu extends Walker_Nav_Menu {
         if ( in_array( 'menu-item-has-children', $item->classes ) ) {
             // Imposta l'URL del link a '#' (non cliccabile)
             $item->url = '#';
+
+            // Aggiungi l'icona SVG dopo il testo
+            $item->title .= ' <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+  <path d="M3.5 3.23847e-07L3.5 6.085L0.705 3.29L-1.74846e-07 4L4 8L8 4L7.295 3.295L4.5 6.085L4.5 2.80136e-07L3.5 3.23847e-07Z" fill="#3C3C3C"/>
+</svg>';
         }
 
         // Usa il metodo di default per gestire il resto delle voci

@@ -1,14 +1,54 @@
-// About
+// Defibrillatori
 @use "/assets/scss/variable/variable" as v;
 
-.about {
-  overflow-x: clip;
-  .hero-about {
-    text-align: center;
+.defibrillatori {
+  overflow-x: hidden;
+
+  .hero-defibrillatori {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .icon {
+      width: fit-content;
+      padding: 8px;
+      border: 1px solid v.$gray-border;
+      border-radius: 200px;
+
+      .icon-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 102px;
+        height: 102px;
+        border-radius: 200px;
+        padding: 25px;
+        background-image: linear-gradient(180deg, v.$white-color, v.$bg-white);
+
+        @include v.respond-to(lg) {
+          width: 180px;
+          height: 180px;
+        }
+      }
+    }
+
+    .titoletto {
+      margin-top: 40px;
+      color: v.$red-color;
+
+      @include v.respond-to(lg) {
+        margin-top: 76px;
+      }
+    }
 
     .title {
+      margin-top: 12px;
       padding: 0px 20px;
       position: relative;
+
+      @include v.respond-to(lg) {
+        margin: 5px;
+      }
 
       span {
         position: absolute;
@@ -21,6 +61,7 @@
     }
 
     .text {
+      text-align: center;
       padding: 0px 20px;
       margin-top: 12px;
 
@@ -33,10 +74,22 @@
       }
     }
 
+    .btn-red {
+      margin-top: 32px;
+
+      @include v.respond-to(lg) {
+        margin-top: 28px;
+      }
+    }
+
     .block-img {
       position: relative;
       z-index: 0;
-      margin-top: 40px;
+      margin-top: 45px;
+
+      @include v.respond-to(lg) {
+        margin-top: 97px;
+      }
 
       img {
         width: 100%;
@@ -45,7 +98,7 @@
         object-fit: cover;
 
         @include v.respond-to(lg) {
-          aspect-ratio: 20/9;
+          aspect-ratio: 20/7;
           border-radius: 42px;
         }
       }
@@ -77,6 +130,7 @@
         }
 
         .title-block {
+          text-align: center;
           padding: 0px 19px;
 
           @include v.respond-to(lg) {
@@ -88,6 +142,7 @@
           }
         }
         .text-block {
+          text-align: center;
           padding: 0px 19px;
           margin-top: 32px;
 
@@ -135,32 +190,35 @@
         }
       }
     }
-    .repeater {
-      margin-top: 40px;
+    .defibrillatori-repeater {
+      margin-top: 62px;
 
-      @include v.respond-to(lg) {
-        margin-top: 134px;
-      }
-
-      .repeater-list {
-        display: flex;
+      .defibrillatori-list {
         width: 100%;
-        flex-direction: column;
+        display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         list-style: none;
         gap: 39px;
 
         @include v.respond-to(md) {
-          flex-direction: row;
+          margin-top: 83px;
+          gap: 89px;
         }
 
         .link-item {
+          width: 44%;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
           gap: 20px;
+
+          @include v.respond-to(md) {
+            width: 20%;
+            min-width: 200px;
+          }
 
           .icon {
             width: fit-content;
@@ -186,12 +244,15 @@
           }
           .link-text {
             max-width: 80%;
+            text-align: center;
+            word-break: break-all;
           }
         }
       }
     }
   }
-  .azienda {
+  .sezione {
+    position: relative;
     margin-top: 86px;
     padding: 0 20px;
 
@@ -200,130 +261,102 @@
     }
 
     @include v.respond-to(lg) {
+      margin-top: 191px;
       padding: 0;
     }
-    .title-azienda {
-      @include v.respond-to(lg) {
-        padding: 0 20px;
-      }
+
+    .img-bg {
+      position: absolute;
+      top: -50px;
+      right: 0;
+      z-index: -1;
     }
 
-    .text-azienda {
-      margin-top: 12px;
-
-      @include v.respond-to(lg) {
-        max-width: 70%;
-        padding: 0 20px;
-      }
-      @include v.respond-to(xl) {
-        max-width: 60%;
-      }
-    }
-
-    .team {
-      margin-top: 75px;
-
-      @include v.respond-to(md) {
-        margin-top: 132px;
-      }
-      @include v.respond-to(xl) {
-        margin-top: 164px;
+    .sezione-wrap {
+      .title {
+        @include v.respond-to(lg) {
+          padding: 0 20px;
+        }
       }
 
-      .title-team {
-        padding: 0 20px;
-        text-align: center;
+      .text {
+        margin-top: 12px;
 
         @include v.respond-to(lg) {
-          padding: 0;
+          max-width: 70%;
+          padding: 0 20px;
+        }
+        @include v.respond-to(xl) {
+          max-width: 60%;
         }
       }
 
-      .repeater-team {
-        margin-top: 32px;
-        padding: 0 10px;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 45px;
-        list-style: none;
+      .repeater-sezione {
+        margin-top: 45px;
 
-        @include v.respond-to(md) {
-          margin-top: 60px;
-          grid-template-columns: repeat(2, 1fr);
-        }
         @include v.respond-to(lg) {
-          grid-template-columns: repeat(3, 1fr);
-          gap: 0 66px;
+          margin-top: 62px;
         }
 
-        .card-team {
-          position: relative;
+        .sezione-list {
+          list-style: none;
+          counter-reset: item;
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 24px;
 
+          @include v.respond-to(md) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 36px;
+          }
           @include v.respond-to(lg) {
-            &:nth-child(2) {
-              margin-top: 100px;
-            }
-            &:nth-child(5) {
-              margin-top: 100px;
-            }
-            &:nth-child(8) {
-              margin-top: 100px;
-            }
-            &:nth-child(11) {
-              margin-top: 100px;
-            }
+            grid-template-columns: repeat(3, 1fr);
           }
-          .card-border {
-            position: absolute;
-            z-index: -1;
-            display: block;
-            border: 1px solid v.$black-color;
-            border-radius: 42px;
-            width: 100%;
-            aspect-ratio: 1;
+          @include v.respond-to(xl) {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 44px;
           }
-          p {
-            padding: 20px 30px 0 30px;
-            max-width: 50%;
 
-            @include v.respond-to(lg) {
-              padding: 30px 40px 0 40px;
-              font-size: clamp(31px, 2.5vw, 35px);
-            }
-          }
-          .img-wrap {
-            margin: 11px 35px 0 35px;
+          .link-item {
             border-radius: 32px;
-            overflow: hidden;
-            aspect-ratio: 0.93;
+            background-color: v.$bg-white;
+            padding: 30px 20px;
+            font-size: 22px;
+            line-height: 27px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+
+            &::before {
+              content: "0" counter(item);
+              counter-increment: item;
+              color: v.$red-color;
+            }
 
             @include v.respond-to(lg) {
-              margin: 20px 25px 0 25px;
+              padding: 31px 28px 45px 28px;
+              font-size: 25px;
+              line-height: 32px;
             }
 
-            img {
-              height: 100%;
-              width: 100%;
-            }
-          }
-          .card-link {
-            margin-top: 26px;
-            padding: 0 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+            .text {
+              max-width: none;
+              padding: 0;
+              margin: 14px 0 0 0;
+              text-transform: none;
+              font-size: clamp(19px, 2vw, 22px);
+              font-weight: 400;
+              line-height: 1.5;
 
-            .link-item {
-              display: flex;
-              align-items: center;
-              gap: 10px;
+              @include v.respond-to(lg) {
+                margin-top: 24px;
+              }
             }
           }
         }
       }
     }
   }
-
   .testimonianze {
     margin-top: 86px;
     padding: 0 20px;
@@ -496,6 +529,197 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+  .numeri {
+    margin-top: 86px;
+    padding: 0 20px;
+
+    @include v.respond-to(md) {
+      margin-top: 132px;
+    }
+
+    @include v.respond-to(lg) {
+      padding: 0;
+    }
+    .title-numeri {
+      @include v.respond-to(lg) {
+        padding: 0 20px;
+      }
+    }
+
+    .text-numeri {
+      margin-top: 12px;
+
+      @include v.respond-to(lg) {
+        max-width: 70%;
+        padding: 0 20px;
+      }
+      @include v.respond-to(xl) {
+        max-width: 60%;
+      }
+    }
+    .repeater-numeri {
+      margin-top: 40px;
+
+      .numeri-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        list-style: none;
+
+        @include v.respond-to(md) {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 36px;
+        }
+        @include v.respond-to(lg) {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 66px;
+        }
+        @include v.respond-to(xl) {
+          gap: 86px;
+        }
+
+        .numeri-item {
+          border: 1px solid v.$black-title-color;
+          border-radius: 42px;
+          padding: 40px 47px;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 30px;
+
+          .number {
+            color: v.$red-color;
+            font-size: 80px;
+            font-weight: 500;
+            line-height: 76px;
+          }
+        }
+      }
+    }
+  }
+  .assistenza {
+    margin-top: 86px;
+    padding: 0 20px;
+
+    @include v.respond-to(md) {
+      margin-top: 132px;
+    }
+
+    @include v.respond-to(lg) {
+      padding: 0;
+    }
+    .title-assistenza {
+      @include v.respond-to(lg) {
+        padding: 0 20px;
+      }
+    }
+
+    .text-assistenza {
+      margin-top: 12px;
+
+      @include v.respond-to(lg) {
+        max-width: 70%;
+        padding: 0 20px;
+      }
+      @include v.respond-to(xl) {
+        max-width: 60%;
+      }
+    }
+
+    .card-section {
+      margin-top: 33px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 27px;
+
+      .card-assisstenza {
+        position: relative;
+        width: 100%;
+        border-radius: 42px;
+        overflow: hidden;
+        padding: 21px;
+        padding-top: 50%;
+        display: grid;
+
+        @include v.respond-to(lg) {
+          aspect-ratio: 10 / 4;
+          padding: 21px;
+          padding-top: 20%;
+          padding-left: 60%;
+        }
+
+        .card-content {
+          z-index: 1;
+          position: relative;
+          background-image: linear-gradient(
+            180deg,
+            v.$white-color,
+            v.$bg-white
+          );
+          border-radius: 32px;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          align-items: flex-end;
+
+          .title-h5 {
+            width: 100%;
+            color: v.$red-color;
+          }
+
+          .card-icon {
+            margin-top: 8px;
+            width: 42px;
+            height: 42px;
+            border-radius: 100px;
+            border: 1px solid v.$gray-border;
+            background-color: v.$white-color;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 4s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+            span {
+              color: v.$black-color;
+              font-size: 19px;
+              font-weight: 200;
+              transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+            }
+
+            @include v.respond-to(xl) {
+              width: 62px;
+              height: 62px;
+
+              span {
+                font-size: 22px;
+              }
+
+              &:hover {
+                background-color: v.$gray-color;
+
+                span {
+                  color: v.$white-color;
+                }
+              }
+            }
+          }
+        }
+
+        img {
+          z-index: 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
       }
     }
