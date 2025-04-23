@@ -1,6 +1,7 @@
 // Export Pages
 @use "/assets/scss/variable/variable" as v;
 
+@use "/assets/scss/page/404" as error;
 @use "/assets/scss/page/about" as about;
 @use "/assets/scss/page/assistenza" as assistenza;
 @use "/assets/scss/page/contatti" as contatti;

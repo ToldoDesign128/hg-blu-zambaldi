@@ -1,0 +1,50 @@
+// About
+@use "/assets/scss/variable/variable" as v;
+
+.error {
+  overflow-x: clip;
+
+  .hero-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .title {
+      padding: 0px 20px;
+      position: relative;
+
+      span {
+        position: absolute;
+        left: 50%;
+        top: -50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        white-space: nowrap;
+      }
+    }
+
+    .text {
+      padding: 0px 20px;
+      margin-top: 12px;
+
+      @include v.respond-to(lg) {
+        margin: 14px auto 0 auto;
+        max-width: 70%;
+      }
+      @include v.respond-to(xl) {
+        max-width: 60%;
+      }
+    }
+    .btn-red{
+        display: block;
+        width: fit-content;
+        margin-top: 34px;
+
+        @include v.respond-to(lg) {
+          margin-top: 44px;
+        }
+    }
+  }
+}
