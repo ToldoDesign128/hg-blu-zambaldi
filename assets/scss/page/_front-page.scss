@@ -18,11 +18,7 @@
 
     @include v.respond-to(xl) {
       padding: 0;
-      min-height: 80vh;
-    }
-
-    @include v.respond-to(big) {
-      min-height: 85vh;
+      min-height: 60vh;
     }
 
     .hero-box {
@@ -30,15 +26,25 @@
       flex-direction: column;
       justify-content: center;
 
-      @include v.respond-to(xl) {
-        min-height: calc((100vh - 190px) - 10vh);
-        max-width: 48%;
+      @include v.respond-to(lg) {
+        min-height: 60vh;
+        max-width: 60%;
+      }
+      @include v.respond-to(xxl) {
+        max-width: 50%;
       }
 
       .title {
         position: relative;
         color: v.$d-gray-color;
         text-transform: uppercase;
+
+        @include v.respond-to(lg) {
+          font-size: 60px;
+        }
+        @include v.respond-to(xl) {
+          font-size: clamp(72px, 6vw, 80px);
+        }
 
         span {
           min-width: 9ch;
@@ -54,15 +60,8 @@
           }
           @include v.respond-to(xl) {
             min-width: 9ch;
-            left: 30%;
+            left: 40%;
           }
-        }
-
-        @include v.respond-to(md) {
-          max-width: 50%;
-        }
-        @include v.respond-to(xl) {
-          max-width: 100%;
         }
       }
       .text {
@@ -72,7 +71,7 @@
           max-width: 50%;
         }
         @include v.respond-to(xl) {
-          max-width: 80%;
+          max-width: 70%;
         }
       }
       .hero-btn {
@@ -88,14 +87,15 @@
       display: flex;
       gap: 10px;
 
-      @include v.respond-to(xl) {
+      @include v.respond-to(lg) {
+        margin: 0;
         position: absolute;
-        top: -20%;
-        left: 50%;
+        top: 0%;
+        left: 60%;
+        height: 100%;
       }
-      @include v.respond-to(big) {
-        top: -10%;
-        left: 40%;
+      @include v.respond-to(xxl) {
+        left: 50%;
       }
 
       .gallery-box {
@@ -144,9 +144,11 @@
           aspect-ratio: 4/3;
 
           @include v.respond-to(md) {
+            min-width: 238px;
             max-width: 240px;
           }
-          @include v.respond-to(xl) {
+          @include v.respond-to(big) {
+            min-width: 278px;
             max-width: 280px;
           }
         }
@@ -174,7 +176,10 @@
     @include v.respond-to(md) {
       margin-top: 74px;
     }
-    @include v.respond-to(xl) {
+    @include v.respond-to(lg) {
+      margin-top: 64px;
+    }
+    @include v.respond-to(xxl) {
       margin-top: 124px;
     }
     .block-txt {
@@ -484,7 +489,6 @@
               }
               .card-title {
                 margin-top: 2px;
-                word-break: break-all;
               }
             }
             .card-icon {

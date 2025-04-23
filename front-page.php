@@ -353,12 +353,27 @@ get_header(); ?>
             $assistenza_titolo = get_field('titolo', $assistenza_page->ID);
             $assistenza_testo = get_field('testo', $assistenza_page->ID);
             $assistenza_immagine = get_field('immagine', $assistenza_page->ID);
+
+            // Funzione per troncare il testo senza spezzare le parole
+            function truncate_text($text, $length)
+            {
+                $text = wp_strip_all_tags($text); // Rimuove tutti i tag HTML
+                if (strlen($text) <= $length) {
+                    return $text;
+                }
+                $text = substr($text, 0, $length);
+                $last_space = strrpos($text, ' ');
+                if ($last_space !== false) {
+                    $text = substr($text, 0, $last_space);
+                }
+                return $text . '...';
+            }
         ?>
             <div class="card-section">
                 <div class="card-prodotti">
                     <div class="card-content">
                         <p class="title-h5 semibold uppercase"><?php echo esc_html($prodotti_titolo); ?></p>
-                        <div><?php echo substr($prodotti_testo, 0, 100); ?></div>
+                        <div><?php echo esc_html(truncate_text($prodotti_testo, 150)); ?></div>
                         <a class="card-icon" href="<?php echo get_permalink($prodotti_page->ID); ?>"><span>+</span></a>
                     </div>
                     <?php if ($prodotti_immagine): ?>
@@ -369,7 +384,7 @@ get_header(); ?>
                 <div class="card-assisstenza">
                     <div class="card-content">
                         <p class="title-h5 semibold uppercase"><?php echo esc_html($assistenza_titolo); ?></p>
-                        <div><?php echo substr($assistenza_testo, 0, 100); ?></div>
+                        <div><?php echo esc_html(truncate_text($assistenza_testo, 150)); ?></div>
                         <a class="card-icon" href="<?php echo get_permalink($assistenza_page->ID); ?>"><span>+</span></a>
                     </div>
                     <?php if ($assistenza_immagine): ?>

@@ -23,80 +23,65 @@
         white-space: nowrap;
 
         @include v.respond-to(lg) {
-            left: 0;
-            transform: translateX(0);
-          }
+          left: 0;
+          transform: translateX(0);
+        }
       }
     }
-    .hero-info{
-        margin-top: 81px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        
+    .hero-info {
+      margin-top: 81px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @include v.respond-to(lg) {
+        margin-top: 28px;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .info-contatti {
+        padding: 0px 20px;
+
         @include v.respond-to(lg) {
-            margin-top: 28px;
-            flex-direction: row;
-            align-items: center;
+          padding: 0;
         }
-        
-        .info-link{
-            padding: 0px 20px;
+
+        .text-contatti {
+          a {
+            color: v.$black-color;
+            opacity: 1;
+            transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
 
             @include v.respond-to(lg) {
-                padding: 0;
+              &:hover {
+                opacity: 0.6;
+              }
             }
-
-            .link-list{
-                display: flex;
-                flex-direction: column;
-                gap: 18px;
-                .link-item{
-                    display: flex;
-                    align-items: center;
-                    gap: 19px;
-
-                    .image-wrap{
-                        padding: 10px;
-                        border: 1px solid v.$gray-border;
-                        border-radius: 200px;
-                    }
-
-                    a{
-                        max-width: 16ch;
-                        opacity: 1;
-                        transition: all .6s cubic-bezier(.215, .61, .355, 1);
-
-                        @include v.respond-to(lg) {
-                            &:hover{
-                                opacity: .6;
-                            }
-                        }
-                    }
-                }
-            }
+          }
         }
+      }
 
-        .map-container{
-            margin-top: 41px;
+      .map-container {
+        margin-top: 41px;
 
-            @include v.respond-to(lg) {
-                margin-top: 0;
-                border: 1px solid v.$gray-border;
-                border-radius: 42px;
-                padding: 10px;
+        @include v.respond-to(lg) {
+          margin-top: 0;
+          border: 1px solid v.$gray-border;
+          border-radius: 42px;
+          padding: 10px;
 
-                .map{
-                    border-radius: 32px;
-                    overflow: hidden;
-                    height: 100%;
+          .map {
+            border-radius: 32px;
+            overflow: hidden;
+            height: 100%;
 
-                    iframe{
-                        display: block;
-                    }
-                }
+            iframe {
+              display: block;
             }
+          }
         }
+      }
     }
   }
 }

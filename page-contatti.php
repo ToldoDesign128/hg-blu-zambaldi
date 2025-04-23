@@ -9,37 +9,14 @@ get_header(); ?>
             <span class="title-bg semibold uppercas"><?php the_title(); ?></span>
         </h1>
         <div class="hero-info">
-            <div class="info-link"> 
+            <div class="info-contatti">
                 <?php
-                if (have_rows('repeater_link')): ?>
-                    <ul class="link-list">
-                        <?php
-                        while (have_rows('repeater_link')) : the_row();
-
-                            $image = get_sub_field('icona_link');
-                            $link = get_sub_field('link');
-
-                            if ($link):
-                                $link_url = $link['url'];
-                                $link_title = $link['title'];
-                                $link_target = $link['target'] ? $link['target'] : '_self'; ?>
-
-                                <li class="link-item">
-                                    <?php if ($image) : ?>
-                                        <div class="image-wrap">
-                                            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                                        </div>
-                                    <?php endif; ?>
-
-                                    <a class="text-body" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
-                                </li>
-
-                        <?php
-                            endif;
-                        endwhile; ?>
-                    </ul>
-                <?php
-                endif; ?>
+                $info_contatti = get_field('testo_contatti');
+                if ($info_contatti): ?>
+                    <div class="text-contatti">
+                        <?php echo $info_contatti ?>
+                    </div>
+                <?php endif; ?>
             </div>
             <div class="map-container">
                 <?php
